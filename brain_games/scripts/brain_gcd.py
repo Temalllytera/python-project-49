@@ -1,38 +1,38 @@
+import random
 import math
-
-
-def gcd(a, b):
-    while b:
-        a, b = b, a % b
-    return a
 
 
 def main():
     print("Welcome to the Brain Games!")
     name = input("May I have your name? ")
     print(f"Hello, {name}!")
-    print("Find the greatest common divisor of given numbers.")
+    print('Find the greatest common divisor of given numbers.')
 
-    correct_answers = 0
-    rounds = 3
+    correct_answers_count = 0
 
-    for _ in range(rounds):
-        num1 = int(input("Enter the first number: "))
-        num2 = int(input("Enter the second number: "))
+    while correct_answers_count < 3:
+        num1 = random.randint(1, 100)
+        num2 = random.randint(1, 100)
 
-        user_answer = int(input("Your answer: "))
-        correct_answer = gcd(num1, num2)
+        print(f"Question: {num1} {num2}")
+        user_answer = input("Your answer: ").strip()
+
+        try:
+            user_answer = int(user_answer)
+        except ValueError:
+            user_answer = None
+
+        correct_answer = math.gcd(num1, num2)
 
         if user_answer == correct_answer:
             print("Correct!")
-            correct_answers += 1
+            correct_answers_count += 1
         else:
             print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
-            print("Let's try again!")
-            break
+            print(f"Let's try again, {name}!")
+            return
 
-    if correct_answers == rounds:
-        print(f"Congratulations, {name}!")
+    print(f"Congratulations, {name}!")
 
 
 if __name__ == "__main__":

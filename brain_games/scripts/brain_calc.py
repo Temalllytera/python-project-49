@@ -1,29 +1,34 @@
-def welcome_user():
-    print("Welcome to the Brain Games!")
-    name = input("May I have your name? ")
-    print(f"Hello, {name}!")
-    return name
-
-
-def calculate(expression):
-    try:
-        result = eval(expression)
-        return str(result)
-    except Exception as e:
-        return f"Error: {str(e)}"
+import random
+import operator
 
 
 def main():
-    name = welcome_user()
-    print("What is the result of the expression?")
+    print("Welcome to the Brain Games!")
+    name = input("May I have your name? ")
+    print(f"Hello, {name}!")
+    print('What is the result of the expression?')
+
+    operators = {
+        '+': operator.add,
+        '-': operator.sub,
+        '*': operator.mul
+    }
 
     correct_answers_count = 0
 
     while correct_answers_count < 3:
-        expression = input("Enter a mathematical expression: ")
-        user_answer = input("Your answer: ")
+        num1 = random.randint(1, 50)
+        num2 = random.randint(1, 50)
+        op = random.choice(list(operators.keys()))
 
-        correct_answer = calculate(expression)
+        question = f"{num1} {op} {num2}"
+        correct_answer = operators[op](num1, num2)
+
+        print(f"Question: {question}")
+        try:
+            user_answer = int(input("Your answer: ").strip())
+        except ValueError:
+            user_answer = None
 
         if user_answer == correct_answer:
             print("Correct!")
