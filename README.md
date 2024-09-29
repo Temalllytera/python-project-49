@@ -31,3 +31,5 @@ brain-prime - простое ли число?
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Temalllytera/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Temalllytera/python-project-49/actions)
 
+### Codeclimate
+[![Maintainability](https://api.codeclimate.com/v1/badges/9a8ef06e823a5598bb36/maintainability)](https://codeclimate.com/github/Temalllytera/python-project-49/maintainability)
