@@ -54,8 +54,8 @@ def main():
             print("'{}' is wrong answer ;(. Correct answer was '{}'.".format(user_answer, correct_answer))
             print("Let's try again, {}!".format(name))
             break
-
-    print("Congratulations, {}!".format(name))
+    if correct_answers_count == 3:
+        print("Congratulations, {}!".format(name))
 
 
 if __name__ == "__main__":

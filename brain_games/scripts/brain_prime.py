@@ -29,10 +29,10 @@ def main():
         else:
             print("Wrong answer ;(. The number is {}prime.".format("" if is_prime(number) else "not "))
             print("Let's try again, {}!".format(name))
-            correct_answers_count = 0
-            continue
+            break
 
-    print("Congratulations, {}!".format(name))
+    if correct_answers_count == 3:
+        print("Congratulations, {}!".format(name))
 
 
 if __name__ == "__main__":
