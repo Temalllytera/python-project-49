@@ -53,6 +53,7 @@ def main():
         else:
             print("'{}' is wrong answer ;(. Correct answer was '{}'.".format(user_answer, correct_answer))
             print("Let's try again, {}!".format(name))
+            break
 
     print("Congratulations, {}!".format(name))
 
