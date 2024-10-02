@@ -14,7 +14,7 @@ def main():
     print("Welcome to the Brain Games!")
     name = input("May I have your name? ")
     print("Hello, {}!".format(name))
-    print("Answer 'yes' if given number is prime. Otherwise answer 'no'.")
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
     correct_answers_count = 0
 
