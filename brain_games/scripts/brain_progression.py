@@ -17,6 +17,7 @@ def hide_element(progression):
 
 
 def show_progression(progression):
+    print("Question:", end=" ")
     for num in progression:
         print(num, end=" ")
     print()
