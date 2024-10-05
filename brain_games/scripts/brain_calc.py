@@ -34,7 +34,8 @@ def main():
             print("Correct!")
             correct_answers_count += 1
         else:
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+            print(f"'{user_answer}' is wrong answer ;(."
+                  "Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {name}!")
             return
 
@@ -43,4 +44,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    

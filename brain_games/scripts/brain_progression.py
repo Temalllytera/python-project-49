@@ -50,7 +50,8 @@ def main():
             print("Correct!")
             correct_answers_count += 1
         else:
-            print("'{}' is wrong answer ;(. Correct answer was '{}'.".format(user_answer, correct_answer))
+            print("'{}' is wrong answer ;(."
+                  " Correct answer was '{}'.".format(user_answer, correct_answer))
             print("Let's try again, {}!".format(name))
             break
     if correct_answers_count == 3:
