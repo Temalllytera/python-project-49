@@ -17,7 +17,7 @@ brain-prime - простое ли число?
 
 ## Демонстрация
 [Проверка имени](https://asciinema.org/a/oX7KyY2kYbRNRRjMTRtOWmQ6I)  
-[Проыерка на четность](https://asciinema.org/a/b6ehjeNwgMv49hohA0ECuwJLn)  
+[Проверка на четность](https://asciinema.org/a/b6ehjeNwgMv49hohA0ECuwJLn)  
 [Калькулятор](https://asciinema.org/a/GckjgJINOEdGiPPSK9ATYR6Jm)  
 [Наибольший общий делитель](https://asciinema.org/a/4dLzXvzmBvJDBbhLk0c6MmkmL)  
 [Арифметическая прогрессия](https://asciinema.org/a/QkoA71BenTXKdtPMf4gy2yVHU)  
