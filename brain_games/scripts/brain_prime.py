@@ -29,8 +29,8 @@ def main():
             print("Correct!")
             correct_answers_count += 1
         else:
-            print("Wrong answer ;(."
-                  " The number is {}prime.".format("" if is_prime(number) else "not "))
+            print("Wrong answer ;(.The number is"
+                  " {}prime.".format("" if is_prime(number) else "not "))
             print("Let's try again, {}!".format(name))
             break
 
