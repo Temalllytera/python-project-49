@@ -32,7 +32,8 @@ def check_answer(user_answer, correct_answer, name):
         print("Correct!")
         return True
     else:
-        print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+        print(f"'{user_answer}' is wrong answer ;(."
+              f" Correct answer was '{correct_answer}'.")
         print(f"Let's try again, {name}!")
         return False
 
@@ -51,7 +52,8 @@ def main():
         show_progression(hidden_progression)
         user_answer = get_user_answer()
 
-        if user_answer is not None and check_answer(user_answer, correct_answer, name):
+        if user_answer is not None\
+                and check_answer(user_answer, correct_answer, name):
             correct_answers_count += 1
         else:
             break
