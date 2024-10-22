@@ -1,3 +1,4 @@
+from brain_games.cli import welcome_user
 import random
 
 
@@ -10,32 +11,46 @@ def is_prime(number):
     return True
 
 
+def generate_question():
+    number = random.randint(1, 100)
+    print(f"Question: {number}")
+    return number
+
+
+def get_user_answer():
+    return input("Your answer: ").lower().strip()
+
+
+def check_answer(user_answer, correct_answer, name):
+    if user_answer == correct_answer:
+        print("Correct!")
+        return True
+    else:
+        prime_status = "prime" if correct_answer == "yes" else "not prime"
+        print(f"Wrong answer ;(. The number is {prime_status}.")
+        print(f"Let's try again, {name}!")
+        return False
+
+
 def main():
-    print("Welcome to the Brain Games!")
-    name = input("May I have your name? ")
-    print("Hello, {}!".format(name))
-    print('Answer "yes" if given number is prime.'
-          ' Otherwise answer "no".')
+    name = welcome_user()
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
     correct_answers_count = 0
 
     while correct_answers_count < 3:
-        number = random.randint(1, 100)
-        print("Question:", number)
-        user_answer = input("Your answer: ").lower()
+        number = generate_question()
+        user_answer = get_user_answer()
 
-        if (user_answer == 'yes' and is_prime(number)) or\
-                (user_answer == 'no' and not is_prime(number)):
-            print("Correct!")
+        correct_answer = "yes" if is_prime(number) else "no"
+
+        if check_answer(user_answer, correct_answer, name):
             correct_answers_count += 1
         else:
-            print("Wrong answer ;(.The number is"
-                  " {}prime.".format("" if is_prime(number) else "not "))
-            print("Let's try again, {}!".format(name))
             break
 
     if correct_answers_count == 3:
-        print("Congratulations, {}!".format(name))
+        print(f"Congratulations, {name}!")
 
 
 if __name__ == "__main__":
