@@ -1,65 +1,31 @@
-from brain_games.cli import welcome_user
 import random
+from brain_games.engine import game_loop
 
 
-def generate_progression(length):
+def generate_question():
     start = random.randint(1, 20)
     diff = random.randint(1, 10)
-    return [start + i * diff for i in range(length)]
+    length = random.randint(5, 10)
+    missing_index = random.randint(0, length - 1)
+
+    progression = [start + i * diff for i in range(length)]
+    correct_answer = str(progression[missing_index])
+    progression[missing_index] = '..'
+
+    question = " ".join(map(str, progression))
+    return question, correct_answer
 
 
-def hide_element(progression):
-    missing_index = random.randint(0, len(progression) - 1)
-    hidden_progression = progression[:]
-    hidden_progression[missing_index] = '..'
-    return hidden_progression, progression[missing_index]
-
-
-def show_progression(progression):
-    print("Question:", " ".join(map(str, progression)))
-
-
-def get_user_answer():
+def validate_answer(user_answer, correct_answer):
     try:
-        return int(input("Your answer: "))
+        return int(user_answer) == int(correct_answer)
     except ValueError:
-        print("Please enter a valid integer.")
-        return None
-
-
-def check_answer(user_answer, correct_answer, name):
-    if user_answer == correct_answer:
-        print("Correct!")
-        return True
-    else:
-        print(f"'{user_answer}' is wrong answer ;(."
-              f" Correct answer was '{correct_answer}'.")
-        print(f"Let's try again, {name}!")
         return False
 
 
 def main():
-    name = welcome_user()
-    print("What number is missing in the progression?")
-
-    correct_answers_count = 0
-
-    while correct_answers_count < 3:
-        progression_length = random.randint(5, 10)
-        progression = generate_progression(progression_length)
-        hidden_progression, correct_answer = hide_element(progression)
-
-        show_progression(hidden_progression)
-        user_answer = get_user_answer()
-
-        if user_answer is not None\
-                and check_answer(user_answer, correct_answer, name):
-            correct_answers_count += 1
-        else:
-            break
-
-    if correct_answers_count == 3:
-        print(f"Congratulations, {name}!")
+    rules = 'What number is missing in the progression?'
+    game_loop(rules, generate_question, validate_answer)
 
 
 if __name__ == "__main__":
