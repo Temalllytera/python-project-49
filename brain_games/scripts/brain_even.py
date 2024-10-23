@@ -13,8 +13,8 @@ def generate_question():
 
 
 def validate_answer(user_answer, correct_answer):
-    return user_answer in ["yes", "no"]\
-           and user_answer == correct_answer
+    return (user_answer in ["yes", "no"] and
+            user_answer == correct_answer)
 
 
 def main():
