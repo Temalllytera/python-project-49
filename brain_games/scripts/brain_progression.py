@@ -1,6 +1,8 @@
 import random
 from brain_games.engine import game_loop
 
+rules = 'What number is missing in the progression?'
+
 
 def generate_question():
     start = random.randint(1, 20)
@@ -24,7 +26,6 @@ def validate_answer(user_answer, correct_answer):
 
 
 def main():
-    rules = 'What number is missing in the progression?'
     game_loop(rules, generate_question, validate_answer)
 
 

@@ -2,6 +2,8 @@ import random
 import math
 from brain_games.engine import game_loop
 
+rules = 'Find the greatest common divisor of given numbers.'
+
 
 def generate_question():
     num1 = random.randint(1, 100)
@@ -19,7 +21,6 @@ def validate_answer(user_answer, correct_answer):
 
 
 def main():
-    rules = 'Find the greatest common divisor of given numbers.'
     game_loop(rules, generate_question, validate_answer)
 
 

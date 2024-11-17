@@ -2,6 +2,8 @@ import random
 import operator
 from brain_games.engine import game_loop
 
+rules = 'What is the result of the expression?'
+
 operators = {
     '+': operator.add,
     '-': operator.sub,
@@ -26,7 +28,6 @@ def validate_answer(user_answer, correct_answer):
 
 
 def main():
-    rules = 'What is the result of the expression?'
     game_loop(rules, generate_question, validate_answer)
 
 

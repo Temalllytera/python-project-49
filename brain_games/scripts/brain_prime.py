@@ -1,6 +1,9 @@
 import random
 from brain_games.engine import game_loop
 
+rules = 'Answer "yes" if given number is prime.' \
+            ' Otherwise answer "no".'
+
 
 def is_prime(number):
     if number <= 1:
@@ -23,8 +26,6 @@ def validate_answer(user_answer, correct_answer):
 
 
 def main():
-    rules = 'Answer "yes" if given number is prime.' \
-            ' Otherwise answer "no".'
     game_loop(rules, generate_question, validate_answer)
 
 

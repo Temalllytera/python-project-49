@@ -1,6 +1,9 @@
 import random
 from brain_games.engine import game_loop
 
+rules = 'Answer "yes" if the number is even,' \
+            ' otherwise answer "no".'
+
 
 def is_even(number):
     return number % 2 == 0
@@ -13,13 +16,12 @@ def generate_question():
 
 
 def validate_answer(user_answer, correct_answer):
-    return (user_answer in ["yes", "no"]
-            and user_answer == correct_answer)
+    is_valid_response = user_answer in ["yes", "no"]
+    is_correct = user_answer == correct_answer
+    return is_valid_response and is_correct
 
 
 def main():
-    rules = 'Answer "yes" if the number is even,' \
-            ' otherwise answer "no".'
     game_loop(rules, generate_question, validate_answer)
 
 
