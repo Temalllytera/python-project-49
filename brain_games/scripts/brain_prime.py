@@ -2,7 +2,7 @@ import random
 from brain_games.engine import game_loop
 
 rules = 'Answer "yes" if given number is prime.' \
-            ' Otherwise answer "no".'
+        ' Otherwise answer "no".'
 
 
 def is_prime(number):

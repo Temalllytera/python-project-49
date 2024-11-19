@@ -1,4 +1,5 @@
 from brain_games.cli import welcome_user
+import prompt
 
 
 def game_loop(rules, generate_question, validate_answer):
@@ -10,7 +11,7 @@ def game_loop(rules, generate_question, validate_answer):
     while correct_answers_count < 3:
         question, correct_answer = generate_question()
         print(f"Question: {question}")
-        user_answer = input("Your answer: ").strip().lower()
+        user_answer = prompt.string("Your answer: ").strip().lower()
 
         if validate_answer(user_answer, correct_answer):
             print("Correct!")
